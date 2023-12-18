@@ -1,0 +1,3 @@
+name: ICLoss
+module_path: q4l.model.loss.zoo
+kwargs: {}

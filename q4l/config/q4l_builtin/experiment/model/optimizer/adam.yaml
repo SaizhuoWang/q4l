@@ -1,0 +1,5 @@
+name: Adam
+module_path: torch.optim
+kwargs:
+  lr: 1.0e-3
+  weight_decay: 0.0

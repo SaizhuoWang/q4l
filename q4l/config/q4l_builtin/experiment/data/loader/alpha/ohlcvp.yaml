@@ -1,0 +1,11 @@
+defaults:
+  - base_data_loader_alpha
+
+name: ohlcvp
+expressions:
+  ohlcvp_open: "{disk:open}"
+  ohlcvp_high: "{disk:high}"
+  ohlcvp_low: "{disk:low}"
+  ohlcvp_close: "{disk:close}"
+  ohlcvp_volume: "{disk:volume}"
+  ohlcvp_vwap: "{disk:vwap}"

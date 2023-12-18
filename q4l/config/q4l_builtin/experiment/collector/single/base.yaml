@@ -1,0 +1,5 @@
+signal_analysis:
+  name: SigAnaRecord
+  module_path: q4l.qlib.workflow.record_temp
+  kwargs:
+    {}

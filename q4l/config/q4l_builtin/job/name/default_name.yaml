@@ -1,0 +1,3 @@
+exp_name: q4l_exp
+run_name: quant_run@${timestamp_now:%Y-%m-%dT%H-%M-%S}
+slurm_jobname: qrn

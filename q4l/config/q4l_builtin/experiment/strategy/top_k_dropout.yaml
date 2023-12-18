@@ -1,0 +1,6 @@
+name: TopkDropoutStrategy
+module_path: q4l.qlib.contrib.strategy
+kwargs:
+  signal: <PRED>
+  topk: 50
+  n_drop: 5

@@ -1,0 +1,14 @@
+defaults:
+  - base_temporal_model
+
+name: MSTR_I
+
+components:
+  temporal:
+    name: MSTR_I
+    module_path: q4l.model.zoo.temporal.mstr_i
+    kwargs:
+      # input_size: ${experiment.model.input_size}
+      hidden_size: 256
+      num_layers: 2
+      dropout: 0.0

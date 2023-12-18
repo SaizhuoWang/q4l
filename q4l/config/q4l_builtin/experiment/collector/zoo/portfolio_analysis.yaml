@@ -1,0 +1,96 @@
+strategy:
+  signal:
+    name: SoftTopkStrategy
+    module_path: q4l.qlib.contrib.strategy.cost_control
+    kwargs:
+      signal: <PRED>
+      topk: 50
+      # n_drop: 5
+  position:
+    name: BasePositionStrategy
+    module_path: q4l.portfolio.position_strategy
+    kwargs:
+      position: <PRED>
+
+
+exchange:
+  cn:
+    name: Q4LExchange
+    module_path: q4l.eval.backtest.exchange
+    kwargs:
+      storage_backend: disk
+      compute_backend: myhxdf
+      deal_price: close
+      open_cost: 0.0005
+      close_cost: 0.0015
+      min_cost: 5
+      pool: ${experiment.data.pool}
+  us:
+    name: Q4LExchange
+    module_path: q4l.eval.backtest.exchange
+    kwargs:
+      storage_backend: disk
+      compute_backend: myhxdf
+      deal_price: close
+      open_cost: 0.0005
+      close_cost: 0.0015
+      min_cost: 5
+      pool: ${experiment.data.pool}
+  hk:
+    name: Q4LExchange
+    module_path: q4l.eval.backtest.exchange
+    kwargs:
+      storage_backend: disk
+      compute_backend: myhxdf
+      deal_price: close
+      open_cost: 0.0005
+      close_cost: 0.0015
+      min_cost: 5
+      pool: ${experiment.data.pool}
+  uk:
+    name: Q4LExchange
+    module_path: q4l.eval.backtest.exchange
+    kwargs:
+      storage_backend: disk
+      compute_backend: myhxdf
+      deal_price: close
+      open_cost: 0.0005
+      close_cost: 0.0015
+      min_cost: 5
+      pool: ${experiment.data.pool}
+
+benchmark:
+  ticker: ${experiment.data.benchmark}
+  field: "{disk:close} / delay({disk:close}, 1) - 1"
+  backend: myhxdf
+
+
+name: PortAnaRecord
+module_path: q4l.qlib.workflow.record_temp
+kwargs:
+  config:
+    strategy:
+      name: TopkDropoutStrategy
+      module_path: q4l.qlib.contrib.strategy
+      kwargs:
+        signal: <PRED>
+        topk: 50
+        n_drop: 5
+    backtest:
+      account: 1.0e+8
+      benchmark:
+        ticker: ${experiment.data.benchmark}
+        field: "{disk:close} / delay({disk:close}, 1) - 1"
+        backend: myhxdf
+      exchange_kwargs:
+        exchange:
+          name: Q4LExchange
+          module_path: q4l.eval.backtest.exchange
+          kwargs:
+            storage_backend: disk
+            compute_backend: myhxdf
+            deal_price: close
+            open_cost: 0.0005
+            close_cost: 0.0015
+            min_cost: 5
+            pool: ${experiment.data.pool}

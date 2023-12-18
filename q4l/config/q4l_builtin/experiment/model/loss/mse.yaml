@@ -1,0 +1,3 @@
+name: MSELoss
+module_path: torch.nn
+kwargs: {}

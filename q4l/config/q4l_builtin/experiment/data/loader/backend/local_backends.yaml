@@ -1,0 +1,5 @@
+defaults:
+  - base_data_loader_backend
+  - storage@storage.disk: disk
+  - compute@compute.numpy: numpy
+  - compute@compute.pandas: pandas

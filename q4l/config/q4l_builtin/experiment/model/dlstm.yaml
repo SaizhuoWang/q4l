@@ -1,0 +1,14 @@
+defaults:
+  - base_temporal_model
+
+name: DLSTM_ATTN
+
+components:
+  temporal:
+    name: DLSTM_ATTN
+    module_path: q4l.model.zoo.temporal.rnn.dlstm_attn
+    kwargs:
+      # input_size: ${experiment.model.input_size}
+      hidden_size: 64
+      num_layers: 2
+      dropout: 0.0

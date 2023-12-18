@@ -1,0 +1,77 @@
+default_stages:
+  - commit
+
+default_language_version:
+  python: python3.8
+
+# Setup excluding files
+exclude: "^$" # Exclude empty files
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-symlinks
+      - id: check-merge-conflict
+      - id: check-json
+      - id: check-added-large-files
+        args: [--maxkb=51200]
+
+  # Black - Code formatter
+  - repo: https://github.com/psf/black
+    rev: 22.12.0
+    hooks:
+      - id: black
+        args: [--line-length=80, --target-version=py38]
+
+  # isort - import sorter
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        args: [--profile=black, --line-length=80]
+
+  # Docformatter - Docstring formatter
+  - repo: https://github.com/PyCQA/docformatter.git
+    rev: v1.5.1
+    hooks:
+      - id: docformatter
+        args: [--in-place, --wrap-summaries=80, --wrap-descriptions=80, --blank]
+
+  # Autoflake - Remove unused imports and variables
+  - repo: https://github.com/PyCQA/autoflake.git
+    rev: v2.0.2
+    hooks:
+      - id: autoflake
+        args:
+          [
+            --in-place,
+            --recursive,
+            --remove-all-unused-imports,
+            --remove-unused-variables,
+            --ignore-init-module-imports,
+            --expand-star-imports,
+            --remove-duplicate-keys,
+          ]
+
+  # # Blacken-docs - Format code blocks in documentation
+  # - repo: https://github.com/adamchainz/blacken-docs
+  #   rev: "v1.12.1" # replace with latest tag on GitHub
+  #   hooks:
+  #     - id: blacken-docs
+  #       additional_dependencies:
+  #         - black==22.12.0
+
+  # # Flake8 - Linter
+  # - repo: https://github.com/PyCQA/flake8
+  #   rev: 6.0.0
+  #   hooks:
+  #     - id: flake8
+  #       args:
+  #         [
+  #           --max-line-length=120,
+  #           --per-file-ignores="__init__.py:F401",
+  #         ]

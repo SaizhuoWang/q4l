@@ -1,0 +1,4 @@
+name: Dropout
+module_path: torch.nn
+kwargs:
+  p: 0.5

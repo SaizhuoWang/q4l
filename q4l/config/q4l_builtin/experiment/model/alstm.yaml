@@ -1,0 +1,13 @@
+defaults:
+  - base_temporal_model
+
+name: DA-RNN
+
+components:
+  temporal:
+    name: ALSTM
+    module_path: q4l.model.zoo.temporal.rnn
+    kwargs:
+      hidden_dim: 256
+      num_layers: 2
+      dropout: 0.1

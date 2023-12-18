@@ -1,0 +1,4 @@
+name: PoolFilter
+module_path: q4l.data.filter
+kwargs:
+  pool_filepath: ${job.machine.data_root}/${experiment.data.region}/instruments/${experiment.data.pool}.txt

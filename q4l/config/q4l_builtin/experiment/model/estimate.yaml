@@ -1,0 +1,18 @@
+defaults:
+  - base_spatial_model
+
+name: ESTIMATE
+model_type: q4l.model.zoo.spatial.fundamental.base.KGModel
+
+components:
+  spatial:
+    name: ESTIMATE
+    module_path: q4l.model.zoo.spatial.hypergraph.estimate
+    kwargs:
+      hidden_size: 16
+
+  temporal:
+    name: DLSTM_ATTN
+    module_path: q4l.model.zoo.temporal.rnn.dlstm_attn
+    kwargs:
+      hidden_size: 16

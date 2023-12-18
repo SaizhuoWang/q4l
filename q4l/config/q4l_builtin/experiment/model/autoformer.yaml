@@ -1,0 +1,18 @@
+defaults:
+  - base_temporal_model
+
+name: AutoFormer
+
+components:
+  temporal:
+    name: AutoFormer
+    module_path: q4l.model.zoo.temporal.transformer.autoformer
+    kwargs:
+      output_attention: false
+      moving_avg: 5
+      hidden_size: 256
+      dropout: 0.1
+      factor: 1
+      n_heads: 4
+      d_ff: 256
+      e_layers: 2

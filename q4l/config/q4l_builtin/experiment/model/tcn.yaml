@@ -1,0 +1,14 @@
+defaults:
+  - base_temporal_model
+
+name: TCN
+
+components:
+  temporal:
+    name: TemporalConvNet
+    module_path: q4l.model.zoo.temporal.tcn
+    kwargs:
+      num_channels: [512, 512, 256]
+      kernel_size: 3
+      dropout: 0.1
+      hidden_size: 256

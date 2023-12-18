@@ -1,0 +1,14 @@
+defaults:
+  - base_temporal_model
+
+name: TS-Mixer
+
+components:
+  temporal:
+    name: MLPMixer
+    module_path: q4l.model.zoo.temporal.mixer
+    kwargs:
+      window_size: ${experiment.data.sampler.x_window}
+      hidden_size: 256
+      num_layers: 3
+      dropout: 0.1

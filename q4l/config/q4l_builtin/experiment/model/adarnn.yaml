@@ -1,0 +1,10 @@
+defaults:
+  - activation@kwargs.activation: relu
+
+name: LSTM
+module_path: q4l.model.zoo.temporal.rnn
+kwargs:
+  # uncertain_input_dim: true
+  hidden_size: 256
+  num_layers: 2
+  dropout: 0.0

@@ -1,0 +1,4 @@
+name: TSNaNFilter
+module_path: q4l.data.filter
+kwargs:
+  nan_ratio: 0.2

@@ -1,0 +1,3 @@
+name: PairwiseRankingLoss
+module_path: q4l.model.loss.zoo
+kwargs: {}

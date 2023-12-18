@@ -1,0 +1,4 @@
+name: RankAnaRecorder
+module_path: q4l.eval.recorder
+kwargs:
+  {}

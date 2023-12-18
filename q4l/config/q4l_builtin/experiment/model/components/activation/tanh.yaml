@@ -1,0 +1,3 @@
+name: Tanh
+module_path: torch.nn
+kwargs: {}

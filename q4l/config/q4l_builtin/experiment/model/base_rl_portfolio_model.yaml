@@ -1,0 +1,40 @@
+defaults:
+  - base_model
+  - metric: q4l_default_metric
+  - loss: mse
+
+model_type: q4l.model.rl.RLModel
+output_type: position
+name: BaseRLPortfolioModel
+basic_info:
+  output_dim: 1
+  batch_size: 300
+  max_step: 1000
+trainer:
+  max_epochs: 100
+components:
+  agent:
+    name: DDPGAgent
+    module_path: q4l.model.rl.agent
+    kwargs:
+      actor_optimizer:
+        name: Adam
+        module_path: torch.optim
+        kwargs:
+          lr: 1e-3
+      critic_optimizer:
+        name: Adam
+        module_path: torch.optim
+        kwargs:
+          lr: 1e-3
+      gamma: 0.99
+  env:
+    name: PortfolioEnv  # Placeholder
+    module_path: q4l.model.rl.env
+    kwargs:
+      {}
+  replay_buffer:
+    name: ReplayBuffer
+    module_path: q4l.model.rl.replay_buffer
+    kwargs:
+      max_size: 1500

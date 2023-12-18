@@ -1,0 +1,14 @@
+# LSTM + MLP
+defaults:
+  - base_model
+  - loss: mse
+  - optimizer: adam
+  - metric: q4l_default_metric
+  - components@components.head: mlp
+
+output_type: signal
+model_type: temporal
+basic_info:
+  output_dim: 1
+trainer:
+  max_epochs: 100

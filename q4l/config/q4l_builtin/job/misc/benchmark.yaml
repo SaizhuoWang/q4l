@@ -1,0 +1,5 @@
+device: "cuda:0"
+timestamp: ${timestamp:now}
+prepare_shm: true
+debug: true
+seed: 42

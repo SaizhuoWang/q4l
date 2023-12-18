@@ -1,0 +1,22 @@
+defaults:
+  - base_spatial_model
+
+name: HATS
+model_type: spatial
+
+components:
+  spatial:
+    name: HATS
+    module_path: q4l.model.zoo.spatial.fundamental.hats
+    kwargs:
+      node_emb_dim: 256
+      rel_emb_dim: 256
+
+  temporal:
+    name: LSTM
+    module_path: q4l.model.zoo.temporal.rnn
+    kwargs:
+      # input_size: ${experiment.model.input_size}
+      hidden_size: 256
+      num_layers: 2
+      dropout : 0.0

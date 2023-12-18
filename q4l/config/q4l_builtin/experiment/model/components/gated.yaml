@@ -1,0 +1,5 @@
+name: Gate
+module_path: q4l.model.zoo.head
+kwargs:
+  input_dim: 64
+  output_dim: 1

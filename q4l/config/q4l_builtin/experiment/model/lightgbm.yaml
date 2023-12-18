@@ -1,0 +1,29 @@
+# LSTM + MLP
+defaults:
+  - base_model
+  - loss: ic_loss
+  - optimizer: adam
+  - metric: q4l_default_metric
+
+output_type: signal
+model_type: non_dl
+basic_info:
+  output_dim: 1
+trainer:
+  max_epochs: 100
+
+name: LightGBM
+components:
+  actual_model:
+    name: LGBModel
+    module_path: q4l.model.zoo.gbdt.lightgbm
+    kwargs:
+      loss: mse
+      colsample_bytree: 0.8879
+      learning_rate: 0.2
+      subsample: 0.8789
+      lambda_l1: 205.6999
+      lambda_l2: 580.9768
+      max_depth: 8
+      num_leaves: 210
+      num_threads: 20

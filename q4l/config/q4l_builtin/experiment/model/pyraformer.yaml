@@ -1,0 +1,21 @@
+defaults:
+  - base_temporal_model
+
+name: Pyraformer
+
+components:
+  temporal:
+    name: PyraFormer
+    module_path: q4l.model.zoo.temporal.transformer.pyraformer
+    kwargs:
+      window_size: [5, 3, 2]
+      n_layer: 5
+      d_inner_hid: 512
+      n_head: 16
+      d_k: 16
+      d_v: 16
+      dropout: 0.1
+      d_bottleneck: 128
+      hidden_size: 256
+      inner_size: 5
+      seq_len: ${experiment.data.sampler.x_window}

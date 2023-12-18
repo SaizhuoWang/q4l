@@ -1,0 +1,12 @@
+defaults:
+  - base_spatial_model
+
+name: STHAN
+model_type: spatial
+
+components:
+  spatial:
+    name: STHAN
+    module_path: q4l.model.zoo.spatial.hypergraph.sthan
+    kwargs:
+      node_emb_dim: 256

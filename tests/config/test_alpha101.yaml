@@ -1,0 +1,25 @@
+defaults:
+  - q4l_global_default
+
+experiment:
+  data:
+    loader:
+      alpha:
+        - name: alpha101
+          compute_backend: my_hxdf
+          expressions: ${factor_list:/wsz/Codes/q4l/tests/config/alpha101_bkd.yaml}
+      backend:
+        storage:
+          disk:
+            name: FileSystemBackend
+            module_path: q4l.data.backend.storage
+            kwargs:
+              root_dir: /wsz/Data/my_data_dir/main/cn
+              frequency: day
+        compute:
+          my_hxdf:
+            name: MyHXDFComputeBackend
+            module_path: q4l.data.backend.compute
+            kwargs: {}
+    pool: csi1000
+    use_shm: false

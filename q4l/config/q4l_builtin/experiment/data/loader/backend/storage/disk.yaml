@@ -1,0 +1,5 @@
+name: FileSystemBackend
+module_path: q4l.data.backend.storage
+kwargs:
+  root_dir: ${job.machine.data_root}/${experiment.data.region}
+  frequency: day

@@ -1,0 +1,42 @@
+defaults:
+  - base_data_preprocessor
+
+shared:
+  - name: ColumnNaNFilter
+    module_path: q4l.data.processor
+    kwargs:
+      nan_threshold: 0.75
+learn:
+  - name: Winsorizer3D
+    module_path: q4l.data.processor
+    kwargs:
+      lower_limit: 0.1
+      upper_limit: 0.1
+      axis: 1
+  - name: ZScore3D
+    module_path: q4l.data.processor
+    kwargs:
+      robust: True
+      axis: 1
+      clip_outlier: True
+  - name: Imputer3D
+    module_path: q4l.data.processor
+    kwargs:
+      method: zero
+infer:
+  - name: Winsorizer3D
+    module_path: q4l.data.processor
+    kwargs:
+      lower_limit: 0.1
+      upper_limit: 0.1
+      axis: 1
+  - name: ZScore3D
+    module_path: q4l.data.processor
+    kwargs:
+      robust: True
+      axis: 1
+      clip_outlier: True
+  - name: Imputer3D
+    module_path: q4l.data.processor
+    kwargs:
+      method: zero

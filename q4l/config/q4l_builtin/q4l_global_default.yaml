@@ -1,0 +1,9 @@
+defaults:
+  - base_config
+  - job: q4l_job_default
+  - experiment: q4l_exp_default
+  - override hydra/job_logging: disabled
+
+hydra:
+  job:
+    chdir: false

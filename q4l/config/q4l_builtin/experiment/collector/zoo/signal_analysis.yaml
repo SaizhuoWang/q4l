@@ -1,0 +1,5 @@
+name: SigAnaRecord
+module_path: q4l.qlib.workflow.record_temp
+kwargs:
+  ana_long_short: True
+  ann_scaler: 252

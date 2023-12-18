@@ -1,0 +1,23 @@
+defaults:
+  - base_temporal_model
+
+name: FEDFormer
+
+components:
+  temporal:
+    name: FEDFormer
+    module_path: q4l.model.zoo.temporal.transformer.fedformer
+    kwargs:
+      version: Fourier
+      mode_select: random
+      modes: 0
+      seq_len: 60
+      moving_avg: 5
+      hidden_size: 256
+      L: 0
+      base: 5
+      dropout: 0.1
+      factor: 5
+      n_heads: 4
+      d_ff: 256
+      e_layers: 2

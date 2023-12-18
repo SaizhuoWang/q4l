@@ -1,0 +1,17 @@
+defaults:
+  - base_temporal_model
+
+name: MLPTSEncoder
+
+components:
+  temporal:
+    name: MLPTSEncoder
+    module_path: q4l.model.zoo.temporal.linear
+    kwargs:
+      hidden_size: [128, 256]
+      output_dim: 256
+      window_size: ${experiment.data.sampler.x_window}
+      activation:
+        name: ReLU
+        module_path: torch.nn
+        kwargs: {}

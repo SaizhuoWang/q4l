@@ -1,0 +1,16 @@
+defaults:
+  - base_temporal_model
+
+name: PatchTST
+
+components:
+  temporal:
+    name: PatchTST
+    module_path: q4l.model.zoo.temporal.transformer.patchtst
+    kwargs:
+      # input_size: ???
+      context_window: ${experiment.data.sampler.x_window}
+      patch_len: 4
+      stride: 2
+      hidden_size: 256
+      d_ff: 512

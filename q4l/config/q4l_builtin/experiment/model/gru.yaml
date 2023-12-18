@@ -1,0 +1,13 @@
+defaults:
+  - base_temporal_model
+
+name: GRU
+
+components:
+  temporal:
+    name: GRU
+    module_path: q4l.model.zoo.temporal.rnn
+    kwargs:
+      hidden_size: 256
+      num_layers: 2
+      dropout: 0.0

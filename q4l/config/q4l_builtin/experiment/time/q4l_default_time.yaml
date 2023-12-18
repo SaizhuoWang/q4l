@@ -1,0 +1,20 @@
+defaults:
+  - base_time
+
+start_time: 2015-01-01
+end_time: 2020-03-01
+fit_start_time: 2015-01-01
+fit_end_time: 2018-01-01
+segments:
+  train:
+    - start: ${timestamp:2015-01-01}
+      end: ${timestamp:2018-01-01}
+  valid:
+    - start: ${timestamp:2018-01-02}
+      end: ${timestamp:2018-06-30}
+  test:
+    - start: ${timestamp:2018-07-01}
+      end: ${timestamp:2020-03-01}
+rolling_step: 60
+# Select from ["expanding", "sliding", "only_new", "throw_away"]
+rolling_type: expanding

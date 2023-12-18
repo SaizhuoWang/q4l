@@ -1,0 +1,15 @@
+defaults:
+  - base_temporal_model
+
+name: MultiScaleRNN
+
+components:
+  temporal:
+    name: MultiScaleRNN
+    module_path: q4l.model.zoo.temporal.rnn
+    kwargs:
+      seq_len: ${experiment.data.sampler.x_window}
+      hidden_size: 256
+      num_layers: 2
+      dropout: 0.0
+      scales: [10, 6, 3, 1]

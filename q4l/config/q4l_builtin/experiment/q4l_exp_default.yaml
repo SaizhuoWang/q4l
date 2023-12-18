@@ -1,0 +1,7 @@
+defaults:
+  - base_experiment
+  - data: q4l_default_data
+  - time: q4l_default_time
+  - model: base_temporal_model
+  - strategy: top_k_dropout
+  - collector: q4l_default_collector

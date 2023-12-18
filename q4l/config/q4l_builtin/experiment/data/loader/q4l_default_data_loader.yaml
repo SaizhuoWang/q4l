@@ -1,0 +1,5 @@
+defaults:
+  - base_data_loader
+  - backend: local_backends
+  # Only 1-day c2c label is specified. Please specify your x-groups on your own
+  - alpha@alpha.c2c: c2c

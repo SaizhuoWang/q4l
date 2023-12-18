@@ -1,0 +1,3 @@
+name: Identity
+module_path: q4l.model.zoo.head
+kwargs: {}

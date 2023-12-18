@@ -1,0 +1,3 @@
+name: PandasComputeBackend
+module_path: q4l.data.backend.compute
+kwargs: {}

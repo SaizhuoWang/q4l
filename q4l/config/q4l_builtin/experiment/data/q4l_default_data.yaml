@@ -1,0 +1,8 @@
+defaults:
+  - base_data
+  - loader: q4l_default_data_loader
+  - preprocessor: q4l_default_preprocessor
+  - sampler: q4l_default_sampler
+
+shm_name: q4l_shm_data
+use_shm: false

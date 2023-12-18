@@ -1,0 +1,5 @@
+device: "cuda:0"
+timestamp: ${timestamp_now:%Y-%m-%dT%H-%M-%S}
+prepare_shm: false
+debug: true
+seed: 42

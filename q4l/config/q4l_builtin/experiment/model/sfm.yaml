@@ -1,0 +1,12 @@
+defaults:
+  - base_temporal_model
+
+name: SFM
+
+components:
+  temporal:
+    name: SFM
+    module_path: q4l.model.zoo.temporal.rnn
+    kwargs:
+      hidden_size: 256
+      output_dim: 256

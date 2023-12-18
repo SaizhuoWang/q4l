@@ -1,0 +1,7 @@
+mlflow_tracking_uri: ./mlruns
+data_root: ./data/main
+log_root: ./logs/
+taskdb_uri: mongodb://192.168.90.201:45203
+taskdb_name: rolling_db
+factor_cache_dir: ./factor_cache/
+tensorboard_dir: ./tensorboard_logs/

@@ -1,0 +1,4 @@
+name: LeakyReLU
+module_path: torch.nn
+kwargs:
+  negative_slope: 0.01

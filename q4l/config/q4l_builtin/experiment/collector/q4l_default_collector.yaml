@@ -1,0 +1,35 @@
+defaults:
+  - base_collector
+  - zoo@zoo.backtest_zoo: portfolio_analysis
+  - zoo@zoo.signal_test: signal_analysis
+
+single:
+  signal: ${experiment.collector.zoo.signal_test}
+
+rolling:
+  signal: ${experiment.collector.zoo.signal_test}
+  portfolio_analysis:
+    name: PortAnaRecord
+    module_path: q4l.qlib.workflow.record_temp
+    kwargs:
+      config:
+        strategy: ${experiment.collector.zoo.backtest_zoo.strategy.${experiment.model.output_type}}
+        backtest:
+          account: 1.0e+8
+          benchmark: ${experiment.collector.zoo.backtest_zoo.benchmark}
+          exchange_kwargs:
+            exchange: ${experiment.collector.zoo.backtest_zoo.exchange.${experiment.data.region}}
+
+repeat:
+  signal: ${experiment.collector.zoo.signal_test}
+  portfolio_analysis:
+    name: PortAnaRecord
+    module_path: q4l.qlib.workflow.record_temp
+    kwargs:
+      config:
+        strategy: ${experiment.collector.zoo.backtest_zoo.strategy.${experiment.model.output_type}}
+        backtest:
+          account: 1.0e+8
+          benchmark: ${experiment.collector.zoo.backtest_zoo.benchmark}
+          exchange_kwargs:
+            exchange: ${experiment.collector.zoo.backtest_zoo.exchange.${experiment.data.region}}

@@ -1,0 +1,18 @@
+defaults:
+  - base_temporal_model
+
+name: Informer
+
+components:
+  temporal:
+    name: Informer
+    module_path: q4l.model.zoo.temporal.transformer.informer
+    kwargs:
+      output_attention: false
+      hidden_size: 256
+      dropout: 0.1
+      factor: 5
+      n_heads: 4
+      d_ff: 256
+      e_layers: 2
+      distil: false

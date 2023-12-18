@@ -1,0 +1,3 @@
+name: ReLU
+module_path: torch.nn
+kwargs: {}

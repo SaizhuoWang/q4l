@@ -1,0 +1,9 @@
+defaults:
+  - filters@filters.ts_nan: ts_nan
+  - filters@filters.pool: pool
+
+batch_size: 1000
+x_window: 10
+y_window: 1
+sample_mode: T
+sample_y_as_x: false

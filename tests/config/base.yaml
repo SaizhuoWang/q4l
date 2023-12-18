@@ -1,0 +1,18 @@
+defaults:
+  - q4l_global_default
+  - override job/machine: rtx
+
+job:
+  machine:
+    data_root: /wsz/Data/my_data_dir/main
+
+experiment:
+  data:
+    region: cn
+    pool: csi1000
+    benchmark: 000852_XSHG
+    sampler:
+      x_group:
+        - alpha101
+      y_group:
+        - c2c

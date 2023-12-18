@@ -1,0 +1,24 @@
+defaults:
+  - base_spatial_model
+
+name: THGNN
+model_type: spatial
+
+components:
+  spatial:
+    name: THGNN
+    module_path: q4l.model.zoo.spatial.adaptive.thgnn
+    kwargs:
+      node_emb_dim: 256
+      out_features: 32
+      num_heads: 8
+      num_layers: 1
+
+  temporal:
+    name: GRU
+    module_path: q4l.model.zoo.temporal.rnn.gru
+    kwargs:
+      # input_size: ${experiment.model.input_size}
+      hidden_size: 256
+      num_layers: 2
+      dropout: 0.0

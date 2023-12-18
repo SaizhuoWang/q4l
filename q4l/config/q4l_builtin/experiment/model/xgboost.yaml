@@ -1,0 +1,27 @@
+# LSTM + MLP
+defaults:
+  - base_model
+  - loss: ic_loss
+  - optimizer: adam
+  - metric: q4l_default_metric
+output_type: signal
+basic_info:
+  output_dim: 1
+trainer:
+  max_epochs: 100
+
+
+model_type: non_dl
+name: XGBoost
+components:
+  actual_model:
+    name: XGBModel
+    module_path: q4l.model.zoo.gbdt.xgboost
+    kwargs:
+      eval_metric: rmse
+      colsample_bytree: 0.8879
+      eta: 0.0421
+      max_depth: 8
+      n_estimators: 647
+      subsample: 0.8789
+      nthread: 20

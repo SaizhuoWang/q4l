@@ -1,0 +1,23 @@
+defaults:
+  - base_spatial_model
+
+name: HATR
+model_type: spatial
+
+components:
+  spatial:
+    name: HATR
+    module_path: q4l.model.zoo.spatial.fundamental.hatr
+    kwargs:
+      node_emb_dim: 256
+
+  temporal:
+    name: MSTR
+    module_path: q4l.model.zoo.temporal.mstr
+    kwargs:
+      # input_size: ${experiment.model.input_size}
+      hidden_size: 256
+      kernel_size: 3
+      dropout: 0.0
+      num_channels: [256,256,256] 
+

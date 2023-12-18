@@ -1,0 +1,8 @@
+defaults:
+  - base_job
+  - name: default_name
+  - resource: base
+  - repeat: debug
+  - parallel: develop
+  - machine: dgx
+  - misc: develop

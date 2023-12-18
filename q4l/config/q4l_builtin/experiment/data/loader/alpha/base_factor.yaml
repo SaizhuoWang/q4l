@@ -1,0 +1,19 @@
+defaults:
+  - base_data_loader_alpha
+
+name: base_factor
+expressions:
+  base_open: "{disk:open}"
+  base_amount: "{disk:amount}"
+  base_mkt: "{disk:mkt}"
+  base_vwap: "{disk:vwap}"
+  base_returns: "{disk:returns}"
+  base_low: "{disk:low}"
+  base_close: "{disk:close}"
+  base_hml: "{disk:hml}"
+  base_industry_group_lv1: "{disk:industry_group_lv1}"
+  base_cap: "{disk:cap}"
+  base_industry_group_lv2: "{disk:industry_group_lv2}"
+  base_high: "{disk:high}"
+  base_volume: "{disk:volume}"
+  base_industry_group_lv3: "{disk:industry_group_lv3}"
